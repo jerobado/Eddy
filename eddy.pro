@@ -2,6 +2,11 @@ TEMPLATE = app
 
 QT = core gui widgets
 
-SOURCES = main.cpp
+HEADERS = include/window.h
+
+SOURCES = src/main.cpp  \
+          src/window.cpp
+
+INCLUDEPATH = include
 
 TARGET = eddy
