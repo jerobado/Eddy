@@ -4,6 +4,7 @@ _todo.txt
 # Generated files
 *.o
 *.qmake.stash
+moc_*
 
 # Executable files
 eddy
