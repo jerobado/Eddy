@@ -1,2 +1,9 @@
 # Personal files
 _todo.txt
+
+# Generated files
+*.o
+*.qmake.stash
+
+# Executable files
+eddy
