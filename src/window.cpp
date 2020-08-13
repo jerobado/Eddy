@@ -1,6 +1,6 @@
-#include "include/window.h"
+#include "window.h"
 
-Window::Window(QWidget *parent) : QWidget(parent)
+Window::Window(QMainWindow *parent) : QMainWindow(parent)
 {
     // widgets
 
