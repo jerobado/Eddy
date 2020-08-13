@@ -2,13 +2,18 @@
 #define WINDOW_H
 
 #include <QMainWindow>
+#include <QPlainTextEdit>
 
 class QPushButton;
-class Window : public QWidget
+class PlainQTextEdit;
+
+class Window : public QMainWindow
 {
     Q_OBJECT
     public:
-        explicit Window(QWidget *parent=0);
+        explicit Window(QMainWindow *parent=0);
+    private:
+        QPlainTextEdit *eddyPlainTextEdit;
 };
 
 #endif // WINDOW_H
