@@ -2,10 +2,13 @@
 #define WINDOW_H
 
 #include <QMainWindow>
+#include <QAction>
+#include <QMenu>
+#include <QMenuBar>
 #include <QPlainTextEdit>
 
-class QPushButton;
-class PlainQTextEdit;
+#include <QDebug>
+
 
 class Window : public QMainWindow
 {
@@ -13,7 +16,13 @@ class Window : public QMainWindow
     public:
         explicit Window(QMainWindow *parent=0);
     private:
+        QAction *newAction;
+        QAction *quitAction;
+        QMenu *fileMenu;
         QPlainTextEdit *eddyPlainTextEdit;
+        void createActions();
+        void createMenus();
+
 };
 
 #endif // WINDOW_H
