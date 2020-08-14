@@ -7,7 +7,7 @@ Window::Window(QMainWindow *parent) : QMainWindow(parent)
 
 
     // properties
-    resize(250, 250);
+    resize(500, 750);
     setWindowTitle("Eddy 0.1");
 
     // layouts
