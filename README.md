@@ -1,4 +1,4 @@
-Edddy
+Eddy
 ---
 
 _Eddy_ is a simple text editor written in C++ and Qt.
