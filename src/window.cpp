@@ -19,6 +19,8 @@ Window::Window(QMainWindow *parent) : QMainWindow(parent)
     setCentralWidget(eddyPlainTextEdit);
 
     // connections
+    connect(quitAction, &QAction::triggered, 
+            this, &Window::exit);
 }
 
 void Window::createActions()
@@ -34,4 +36,10 @@ void Window::createMenus()
     fileMenu = menuBar()->addMenu(tr("&File"));
     fileMenu->addAction(newAction);
     fileMenu->addAction(quitAction);
+}
+
+
+void Window::exit()
+{
+    QCoreApplication::quit();
 }

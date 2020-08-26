@@ -6,6 +6,7 @@
 #include <QMenu>
 #include <QMenuBar>
 #include <QPlainTextEdit>
+#include <QCoreApplication>
 
 #include <QDebug>
 
@@ -15,6 +16,7 @@ class Window : public QMainWindow
     Q_OBJECT
     public:
         explicit Window(QMainWindow *parent=0);
+    
     private:
         QAction *newAction;
         QAction *quitAction;
@@ -22,6 +24,9 @@ class Window : public QMainWindow
         QPlainTextEdit *eddyPlainTextEdit;
         void createActions();
         void createMenus();
+
+    private slots:
+        void exit();
 
 };
 
