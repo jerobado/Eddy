@@ -5,15 +5,13 @@ Window::Window(QMainWindow *parent) : QMainWindow(parent)
     // widgets
     eddyPlainTextEdit = new QPlainTextEdit();
     
-
     // actions and menus
     createActions();
     createMenus();
 
-
     // properties
     resize(500, 750);
-    setWindowTitle("Eddy 0.1");
+    setWindowTitle("Eddy 0.1.1");
 
     // layouts
     setCentralWidget(eddyPlainTextEdit);
