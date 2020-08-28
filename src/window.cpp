@@ -24,6 +24,7 @@ Window::Window(QMainWindow *parent) : QMainWindow(parent)
 void Window::createActions()
 {
     newAction = new QAction(tr("&New"), this);
+    saveAsAction = new QAction(tr("Save &As"), this);
     quitAction = new QAction(tr("&Quit"), this);
     // [] TODO: set signal and slots
 }
@@ -33,6 +34,9 @@ void Window::createMenus()
 {
     fileMenu = menuBar()->addMenu(tr("&File"));
     fileMenu->addAction(newAction);
+    fileMenu->addSeparator();
+    fileMenu->addAction(saveAsAction);
+    fileMenu->addSeparator();
     fileMenu->addAction(quitAction);
 }
 

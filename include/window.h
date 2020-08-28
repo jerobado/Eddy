@@ -19,6 +19,7 @@ class Window : public QMainWindow
     
     private:
         QAction *newAction;
+        QAction *saveAsAction;
         QAction *quitAction;
         QMenu *fileMenu;
         QPlainTextEdit *eddyPlainTextEdit;
