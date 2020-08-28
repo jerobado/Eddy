@@ -17,6 +17,9 @@ Window::Window(QMainWindow *parent) : QMainWindow(parent)
     setCentralWidget(eddyPlainTextEdit);
 
     // connections
+    connect(saveAsAction, &QAction::triggered,
+            this, &Window::saveAs);
+
     connect(quitAction, &QAction::triggered, 
             this, &Window::exit);
 }
@@ -38,6 +41,12 @@ void Window::createMenus()
     fileMenu->addAction(saveAsAction);
     fileMenu->addSeparator();
     fileMenu->addAction(quitAction);
+}
+
+void Window::saveAs()
+{
+    // [] TODO: learn how to use QFile and QTextStream 
+    qDebug() << eddyPlainTextEdit->toPlainText();
 }
 
 

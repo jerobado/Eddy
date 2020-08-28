@@ -27,6 +27,7 @@ class Window : public QMainWindow
         void createMenus();
 
     private slots:
+        void saveAs();
         void exit();
 
 };
