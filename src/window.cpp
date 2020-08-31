@@ -11,7 +11,7 @@ Window::Window(QMainWindow *parent) : QMainWindow(parent)
 
     // properties
     resize(500, 750);
-    setWindowTitle("Eddy 0.1.1");
+    setWindowTitle("Eddy 0.1.2");
 
     // layouts
     setCentralWidget(eddyPlainTextEdit);
