@@ -7,8 +7,11 @@
 #include <QMenuBar>
 #include <QPlainTextEdit>
 #include <QCoreApplication>
-
 #include <QDebug>
+#include <QFile>
+#include <QTextStream>
+#include <QFileDialog>
+#include <QString>
 
 
 class Window : public QMainWindow

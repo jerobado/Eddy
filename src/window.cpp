@@ -45,10 +45,18 @@ void Window::createMenus()
 
 void Window::saveAs()
 {
-    // [] TODO: learn how to use QFile and QTextStream 
-    qDebug() << eddyPlainTextEdit->toPlainText();
+    
+    QString filename = QFileDialog::getSaveFileName(this, 
+                                                    tr("Save As"),
+                                                    "untitled.txt",
+                                                    tr("Text files (*.txt)"));
+    QFile file(filename);
+    if (file.open(QFile::WriteOnly | QFile::Truncate))
+    {
+        QTextStream writer(&file);
+        writer << eddyPlainTextEdit->toPlainText();
+    }
 }
-
 
 void Window::exit()
 {
