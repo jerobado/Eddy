@@ -1,35 +1,28 @@
 #include "window.h"
 
+
 Window::Window(QMainWindow *parent) : QMainWindow(parent)
 {
-    // widgets
-    eddyPlainTextEdit = new QPlainTextEdit();
-    
-    // actions and menus
+    createWidgets();   
     createActions();
     createMenus();
+    setProperties();
+    setLayouts();
+    setConnections();
+ }
 
-    // properties
-    resize(500, 750);
-    setWindowTitle("Eddy 0.1.2");
 
-    // layouts
-    setCentralWidget(eddyPlainTextEdit);
-
-    // connections
-    connect(saveAsAction, &QAction::triggered,
-            this, &Window::saveAs);
-
-    connect(quitAction, &QAction::triggered, 
-            this, &Window::exit);
+void Window::createWidgets()
+{
+    eddyPlainTextEdit = new QPlainTextEdit();
 }
+
 
 void Window::createActions()
 {
     newAction = new QAction(tr("&New"), this);
     saveAsAction = new QAction(tr("Save &As"), this);
     quitAction = new QAction(tr("&Quit"), this);
-    // [] TODO: set signal and slots
 }
 
 
@@ -43,9 +36,31 @@ void Window::createMenus()
     fileMenu->addAction(quitAction);
 }
 
-void Window::saveAs()
+
+void Window::setProperties()
 {
-    
+    resize(500, 750);
+    setWindowTitle("Eddy 0.1.2");
+}
+
+
+void Window::setLayouts()
+{
+    setCentralWidget(eddyPlainTextEdit);
+}
+
+
+void Window::setConnections()
+{
+    connect(saveAsAction, &QAction::triggered,
+            this, &Window::saveAs);
+    connect(quitAction, &QAction::triggered, 
+            this, &Window::exit);
+}
+
+
+void Window::saveAs()
+{  
     QString filename = QFileDialog::getSaveFileName(this, 
                                                     tr("Save As"),
                                                     "untitled.txt",
@@ -57,6 +72,7 @@ void Window::saveAs()
         writer << eddyPlainTextEdit->toPlainText();
     }
 }
+
 
 void Window::exit()
 {

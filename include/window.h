@@ -26,8 +26,12 @@ class Window : public QMainWindow
         QAction *quitAction;
         QMenu *fileMenu;
         QPlainTextEdit *eddyPlainTextEdit;
+        void createWidgets();
         void createActions();
         void createMenus();
+        void setProperties();
+        void setLayouts();
+        void setConnections();
 
     private slots:
         void saveAs();
