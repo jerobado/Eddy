@@ -21,6 +21,7 @@ void Window::createWidgets()
 void Window::createActions()
 {
     newAction = new QAction(tr("&New"), this);
+    openAction = new QAction(tr("&Open"), this);
     saveAsAction = new QAction(tr("Save &As"), this);
     quitAction = new QAction(tr("&Quit"), this);
 }
@@ -30,6 +31,7 @@ void Window::createMenus()
 {
     fileMenu = menuBar()->addMenu(tr("&File"));
     fileMenu->addAction(newAction);
+    fileMenu->addAction(openAction);
     fileMenu->addSeparator();
     fileMenu->addAction(saveAsAction);
     fileMenu->addSeparator();
@@ -52,10 +54,29 @@ void Window::setLayouts()
 
 void Window::setConnections()
 {
+    connect(openAction, &QAction::triggered,
+            this, &Window::open);
     connect(saveAsAction, &QAction::triggered,
             this, &Window::saveAs);
     connect(quitAction, &QAction::triggered, 
             this, &Window::exit);
+}
+
+
+// private slots here
+void Window::open()
+{
+    QString filename = QFileDialog::getOpenFileName(this,
+                                                    tr("Open File"),
+                                                    ".",
+                                                    tr("Text files (*.txt)"));
+    QFile file(filename);
+    if (file.open(QFile::ReadWrite))
+    {
+        QByteArray file_content = file.readAll();
+        QString plaintext = QString::fromStdString(file_content.toStdString());
+        eddyPlainTextEdit->setPlainText(plaintext);
+    }
 }
 
 

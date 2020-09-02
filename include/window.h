@@ -12,6 +12,7 @@
 #include <QTextStream>
 #include <QFileDialog>
 #include <QString>
+#include <QByteArray>
 
 
 class Window : public QMainWindow
@@ -22,6 +23,7 @@ class Window : public QMainWindow
     
     private:
         QAction *newAction;
+        QAction *openAction;
         QAction *saveAsAction;
         QAction *quitAction;
         QMenu *fileMenu;
@@ -34,6 +36,7 @@ class Window : public QMainWindow
         void setConnections();
 
     private slots:
+        void open();
         void saveAs();
         void exit();
 
