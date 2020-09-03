@@ -38,7 +38,7 @@ class Window : public QMainWindow
     private slots:
         void open();
         void saveAs();
-        void exit();
+        void quit();
 
 };
 

@@ -59,7 +59,7 @@ void Window::setConnections()
     connect(saveAsAction, &QAction::triggered,
             this, &Window::saveAs);
     connect(quitAction, &QAction::triggered, 
-            this, &Window::exit);
+            this, &Window::quit);
 }
 
 
@@ -95,7 +95,7 @@ void Window::saveAs()
 }
 
 
-void Window::exit()
+void Window::quit()
 {
     QCoreApplication::quit();
 }
