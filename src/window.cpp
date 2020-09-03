@@ -54,6 +54,8 @@ void Window::setLayouts()
 
 void Window::setConnections()
 {
+    connect(newAction, &QAction::triggered,
+            this, &Window::newFile);
     connect(openAction, &QAction::triggered,
             this, &Window::open);
     connect(saveAsAction, &QAction::triggered,
@@ -64,6 +66,12 @@ void Window::setConnections()
 
 
 // private slots here
+void Window::newFile()
+{
+    eddyPlainTextEdit->clear();
+}
+
+
 void Window::open()
 {
     QString filename = QFileDialog::getOpenFileName(this,

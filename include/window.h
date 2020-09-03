@@ -36,6 +36,7 @@ class Window : public QMainWindow
         void setConnections();
 
     private slots:
+        void newFile();
         void open();
         void saveAs();
         void quit();
