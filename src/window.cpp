@@ -22,6 +22,7 @@ void Window::createActions()
 {
     newAction = new QAction(tr("&New"), this);
     openAction = new QAction(tr("&Open"), this);
+    saveAction = new QAction(tr("&Save"), this);
     saveAsAction = new QAction(tr("Save &As"), this);
     quitAction = new QAction(tr("&Quit"), this);
 }
@@ -33,6 +34,7 @@ void Window::createMenus()
     fileMenu->addAction(newAction);
     fileMenu->addAction(openAction);
     fileMenu->addSeparator();
+    fileMenu->addAction(saveAction);
     fileMenu->addAction(saveAsAction);
     fileMenu->addSeparator();
     fileMenu->addAction(quitAction);
@@ -58,6 +60,8 @@ void Window::setConnections()
             this, &Window::newFile);
     connect(openAction, &QAction::triggered,
             this, &Window::open);
+    connect(saveAction, &QAction::triggered,
+            this, &Window::save);
     connect(saveAsAction, &QAction::triggered,
             this, &Window::saveAs);
     connect(quitAction, &QAction::triggered, 
@@ -87,6 +91,11 @@ void Window::open()
     }
 }
 
+
+void Window::save()
+{
+    qDebug() << "save";
+}
 
 void Window::saveAs()
 {  

@@ -24,6 +24,7 @@ class Window : public QMainWindow
     private:
         QAction *newAction;
         QAction *openAction;
+        QAction *saveAction;
         QAction *saveAsAction;
         QAction *quitAction;
         QMenu *fileMenu;
@@ -38,6 +39,7 @@ class Window : public QMainWindow
     private slots:
         void newFile();
         void open();
+        void save();
         void saveAs();
         void quit();
 
