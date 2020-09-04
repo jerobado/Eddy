@@ -66,6 +66,8 @@ void Window::setConnections()
             this, &Window::saveAs);
     connect(quitAction, &QAction::triggered, 
             this, &Window::quit);
+    connect(eddyPlainTextEdit, &QPlainTextEdit::textChanged,
+            this, &Window::on_eddyPlainTextEdit_textChanged);
 }
 
 
@@ -95,7 +97,9 @@ void Window::open()
 void Window::save()
 {
     qDebug() << "save";
+
 }
+
 
 void Window::saveAs()
 {  
@@ -115,4 +119,10 @@ void Window::saveAs()
 void Window::quit()
 {
     QCoreApplication::quit();
+}
+
+
+void Window::on_eddyPlainTextEdit_textChanged()
+{
+    qDebug() << "yeah it work";
 }

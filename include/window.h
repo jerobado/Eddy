@@ -42,6 +42,7 @@ class Window : public QMainWindow
         void save();
         void saveAs();
         void quit();
+        void on_eddyPlainTextEdit_textChanged();
 
 };
 
