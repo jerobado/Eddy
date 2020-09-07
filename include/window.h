@@ -22,6 +22,7 @@ class Window : public QMainWindow
         explicit Window(QMainWindow *parent=0);
     
     private:
+        bool isEddyPlainTextEditTextChanged = false;
         QAction *newAction;
         QAction *openAction;
         QAction *saveAction;

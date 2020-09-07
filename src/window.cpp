@@ -96,8 +96,16 @@ void Window::open()
 
 void Window::save()
 {
-    qDebug() << "save";
-
+    if (isEddyPlainTextEditTextChanged)
+    {
+        QFile file("sample.txt");   // [] TODO: get global working filename
+        if (file.open(QFile::WriteOnly | QFile::Truncate))
+        {
+            QTextStream writer(&file);
+            writer << eddyPlainTextEdit->toPlainText();
+        }
+        isEddyPlainTextEditTextChanged = false;
+    }
 }
 
 
@@ -124,5 +132,5 @@ void Window::quit()
 
 void Window::on_eddyPlainTextEdit_textChanged()
 {
-    qDebug() << "yeah it work";
+    isEddyPlainTextEditTextChanged = true;
 }
