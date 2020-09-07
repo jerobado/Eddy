@@ -44,7 +44,7 @@ void Window::createMenus()
 void Window::setProperties()
 {
     resize(500, 750);
-    setWindowTitle("Eddy 0.1.5");
+    setWindowTitle("Eddy 0.1.6");
 }
 
 
