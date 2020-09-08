@@ -133,4 +133,5 @@ void Window::quit()
 void Window::on_eddyPlainTextEdit_textChanged()
 {
     isEddyPlainTextEditTextChanged = true;
+    this->save();
 }
