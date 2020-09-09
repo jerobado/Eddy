@@ -79,11 +79,13 @@ void Window::newFile()
 
 
 void Window::open()
-{
-    QString filename = QFileDialog::getOpenFileName(this,
-                                                    tr("Open File"),
-                                                    ".",
-                                                    tr("Text files (*.txt)"));
+{  
+    workingFilename = QFileDialog::getOpenFileName(this,
+                                                   tr("Open File"),
+                                                   ".",
+                                                   tr("Text files (*.txt)"));
+
+    QFile file(workingFilename);
     QFile file(filename);
     if (file.open(QFile::ReadWrite))
     {
@@ -98,7 +100,7 @@ void Window::save()
 {
     if (isEddyPlainTextEditTextChanged)
     {
-        QFile file("sample.txt");   // [] TODO: get global working filename
+        QFile file(workingFilename);
         if (file.open(QFile::WriteOnly | QFile::Truncate))
         {
             QTextStream writer(&file);
@@ -111,11 +113,11 @@ void Window::save()
 
 void Window::saveAs()
 {  
-    QString filename = QFileDialog::getSaveFileName(this, 
-                                                    tr("Save As"),
-                                                    "untitled.txt",
-                                                    tr("Text files (*.txt)"));
-    QFile file(filename);
+    workingFilename = QFileDialog::getSaveFileName(this, 
+                                                   tr("Save As"),
+                                                   "untitled.txt",
+                                                   tr("Text files (*.txt)"));
+    QFile file(workingFilename);
     if (file.open(QFile::WriteOnly | QFile::Truncate))
     {
         QTextStream writer(&file);

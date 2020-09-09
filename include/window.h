@@ -30,6 +30,7 @@ class Window : public QMainWindow
         QAction *quitAction;
         QMenu *fileMenu;
         QPlainTextEdit *eddyPlainTextEdit;
+        QString workingFilename;
         void createWidgets();
         void createActions();
         void createMenus();
