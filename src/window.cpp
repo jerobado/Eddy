@@ -86,12 +86,13 @@ void Window::open()
                                                    tr("Text files (*.txt)"));
 
     QFile file(workingFilename);
-    QFile file(filename);
+    QFileInfo fileinfo(workingFilename);
     if (file.open(QFile::ReadWrite))
     {
         QByteArray file_content = file.readAll();
         QString plaintext = QString::fromStdString(file_content.toStdString());
         eddyPlainTextEdit->setPlainText(plaintext);
+        setWindowTitle(fileinfo.fileName() + " - " + "Eddy 0.1.6");
     }
 }
 

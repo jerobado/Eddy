@@ -14,6 +14,8 @@
 #include <QString>
 #include <QByteArray>
 
+#include <QFileInfo>
+
 
 class Window : public QMainWindow
 {
