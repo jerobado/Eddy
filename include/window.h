@@ -25,6 +25,7 @@ class Window : public QMainWindow
     
     private:
         bool isEddyPlainTextEditTextChanged = false;
+        bool isNewFile = false;
         QAction *newAction;
         QAction *openAction;
         QAction *saveAction;

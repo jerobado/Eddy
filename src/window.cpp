@@ -74,6 +74,8 @@ void Window::setConnections()
 // private slots here
 void Window::newFile()
 {
+    workingFilename = "";
+    isNewFile = true;
     eddyPlainTextEdit->clear();
 }
 
@@ -135,6 +137,10 @@ void Window::quit()
 
 void Window::on_eddyPlainTextEdit_textChanged()
 {
-    isEddyPlainTextEditTextChanged = true;
-    this->save();
+    if (!isNewFile)
+    {
+        isEddyPlainTextEditTextChanged = true;
+        isNewFile = false;
+        save();
+    }
 }
