@@ -122,10 +122,12 @@ void Window::saveAs()
                                                    "untitled.txt",
                                                    tr("Text files (*.txt)"));
     QFile file(workingFilename);
+    QFileInfo fileinfo(workingFilename);
     if (file.open(QFile::WriteOnly | QFile::Truncate))
     {
         QTextStream writer(&file);
         writer << eddyPlainTextEdit->toPlainText();
+        setWindowTitle(fileinfo.fileName() + " - " + "Eddy 0.1.6");
     }
 }
 
