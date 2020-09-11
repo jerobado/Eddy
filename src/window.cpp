@@ -77,6 +77,7 @@ void Window::newFile()
     workingFilename = "";
     isNewFile = true;
     eddyPlainTextEdit->clear();
+    setWindowTitle("Eddy 0.1.6");
 }
 
 
