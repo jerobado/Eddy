@@ -44,7 +44,7 @@ void Window::createMenus()
 void Window::setProperties()
 {
     resize(500, 750);
-    setWindowTitle("Eddy 0.1.6");
+    setWindowTitle(appName + " " + appVersion);
 }
 
 
@@ -77,7 +77,7 @@ void Window::newFile()
     workingFilename = "";
     isNewFile = true;
     eddyPlainTextEdit->clear();
-    setWindowTitle("Eddy 0.1.6");
+    setWindowTitle(appName + " " + appVersion);
 }
 
 
@@ -95,7 +95,7 @@ void Window::open()
         QByteArray file_content = file.readAll();
         QString plaintext = QString::fromStdString(file_content.toStdString());
         eddyPlainTextEdit->setPlainText(plaintext);
-        setWindowTitle(fileinfo.fileName() + " - " + "Eddy 0.1.6");
+        setWindowTitle(fileinfo.fileName() + " - " + appName + " " + appVersion);
     }
 }
 
@@ -127,7 +127,7 @@ void Window::saveAs()
     {
         QTextStream writer(&file);
         writer << eddyPlainTextEdit->toPlainText();
-        setWindowTitle(fileinfo.fileName() + " - " + "Eddy 0.1.6");
+        setWindowTitle(fileinfo.fileName() + " - " + appName + " " + appVersion);
     }
 }
 
