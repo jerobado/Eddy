@@ -127,6 +127,7 @@ void Window::saveAs()
     {
         QTextStream writer(&file);
         writer << eddyPlainTextEdit->toPlainText();
+        isNewFile = false;
         setWindowTitle(fileinfo.fileName() + " - " + appName + " " + appVersion);
     }
 }
