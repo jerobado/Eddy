@@ -43,6 +43,11 @@ void Window::createMenus()
 
 void Window::setProperties()
 {
+    newAction->setShortcut(QKeySequence::New);
+    openAction->setShortcut(QKeySequence::Open);
+    saveAction->setShortcut(QKeySequence::Save);
+    saveAsAction->setShortcut(QKeySequence::SaveAs);
+    quitAction->setShortcut(QKeySequence::Quit);
     resize(500, 750);
     setWindowTitle(appName + " " + appVersion);
 }

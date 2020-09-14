@@ -13,8 +13,8 @@
 #include <QFileDialog>
 #include <QString>
 #include <QByteArray>
-
 #include <QFileInfo>
+#include <QKeySequence>
 
 
 class Window : public QMainWindow
