@@ -100,6 +100,7 @@ void Window::open()
         QByteArray file_content = file.readAll();
         QString plaintext = QString::fromStdString(file_content.toStdString());
         eddyPlainTextEdit->setPlainText(plaintext);
+        isNewFile = false;
         setWindowTitle(fileinfo.fileName() + " - " + appName + " " + appVersion);
     }
 }
@@ -149,7 +150,6 @@ void Window::on_eddyPlainTextEdit_textChanged()
     if (!isNewFile)
     {
         isEddyPlainTextEditTextChanged = true;
-        isNewFile = false;
         save();
     }
 }
