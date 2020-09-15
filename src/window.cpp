@@ -91,7 +91,7 @@ void Window::open()
     workingFilename = QFileDialog::getOpenFileName(this,
                                                    tr("Open File"),
                                                    ".",
-                                                   tr("Text files (*.txt)"));
+                                                   tr("Text files (*.txt);;Any files (*)"));
 
     QFile file(workingFilename);
     QFileInfo fileinfo(workingFilename);
