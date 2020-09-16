@@ -153,3 +153,12 @@ void Window::on_eddyPlainTextEdit_textChanged()
         save();
     }
 }
+
+// events
+void Window::keyPressEvent(QKeyEvent *event)
+{
+    if (event->key() == Qt::Key_F5)
+    {
+        qDebug() << "write the current timestamp";
+    }
+}

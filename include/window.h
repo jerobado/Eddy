@@ -15,6 +15,7 @@
 #include <QByteArray>
 #include <QFileInfo>
 #include <QKeySequence>
+#include <QKeyEvent>
 
 
 class Window : public QMainWindow
@@ -42,6 +43,9 @@ class Window : public QMainWindow
         void setProperties();
         void setLayouts();
         void setConnections();
+
+    protected:
+        void keyPressEvent(QKeyEvent *event);
 
     private slots:
         void newFile();
