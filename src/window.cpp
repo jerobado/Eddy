@@ -159,6 +159,6 @@ void Window::keyPressEvent(QKeyEvent *event)
 {
     if (event->key() == Qt::Key_F5)
     {
-        qDebug() << "write the current timestamp";
+        eddyPlainTextEdit->insertPlainText(QDateTime::currentDateTime().toString("h:m:ss ap, ddd, d MMM yyyy"));
     }
 }
