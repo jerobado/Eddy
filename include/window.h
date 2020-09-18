@@ -36,7 +36,7 @@ class Window : public QMainWindow
         QMenu *fileMenu;
         QPlainTextEdit *eddyPlainTextEdit;
         QString appName = "Eddy";
-        QString appVersion = "0.1.8";
+        QString appVersion = "0.1.9";
         QString workingFilename;
         void createWidgets();
         void createActions();
