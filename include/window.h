@@ -38,6 +38,7 @@ class Window : public QMainWindow
         QString appName = "Eddy";
         QString appVersion = "0.1.9";
         QString workingFilename;
+        QString lastKnownFilePath = ".";
         void createWidgets();
         void createActions();
         void createMenus();

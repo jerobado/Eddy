@@ -90,17 +90,19 @@ void Window::open()
 {  
     workingFilename = QFileDialog::getOpenFileName(this,
                                                    tr("Open File"),
-                                                   ".",
+                                                   lastKnownFilePath,
                                                    tr("Text files (*.txt);;Any files (*)"));
 
     QFile file(workingFilename);
     QFileInfo fileinfo(workingFilename);
     if (file.open(QFile::ReadWrite))
     {
+
         QByteArray file_content = file.readAll();
         QString plaintext = QString::fromStdString(file_content.toStdString());
         eddyPlainTextEdit->setPlainText(plaintext);
         isNewFile = false;
+        lastKnownFilePath = fileinfo.absolutePath();
         setWindowTitle(fileinfo.fileName() + " - " + appName + " " + appVersion);
     }
 }
@@ -125,7 +127,7 @@ void Window::saveAs()
 {  
     workingFilename = QFileDialog::getSaveFileName(this, 
                                                    tr("Save As"),
-                                                   "untitled.txt",
+                                                   lastKnownFilePath + "/untitled.txt",
                                                    tr("Text files (*.txt)"));
     QFile file(workingFilename);
     QFileInfo fileinfo(workingFilename);
@@ -134,6 +136,7 @@ void Window::saveAs()
         QTextStream writer(&file);
         writer << eddyPlainTextEdit->toPlainText();
         isNewFile = false;
+        lastKnownFilePath = fileinfo.absolutePath();
         setWindowTitle(fileinfo.fileName() + " - " + appName + " " + appVersion);
     }
 }
