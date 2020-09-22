@@ -16,7 +16,7 @@
 #include <QFileInfo>
 #include <QKeySequence>
 #include <QDateTime>
-
+#include <QSettings>
 
 class Window : public QMainWindow
 {
@@ -37,13 +37,15 @@ class Window : public QMainWindow
         QString appName = "Eddy";
         QString appVersion = "0.1.10";
         QString workingFilename;
-        QString lastKnownFilePath = ".";
+        QString lastKnownFilePath = ".";    
         void createWidgets();
         void createActions();
         void createMenus();
         void setProperties();
         void setLayouts();
-        void setConnections();
+        void setConnections();       
+        void readSettings();
+        void saveSettings();
 
     protected:
         void closeEvent(QCloseEvent *event);

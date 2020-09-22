@@ -7,6 +7,7 @@ Window::Window(QMainWindow *parent) : QMainWindow(parent)
     createActions();
     createMenus();
     setProperties();
+    readSettings();  
     setLayouts();
     setConnections();
  }
@@ -50,6 +51,20 @@ void Window::setProperties()
     quitAction->setShortcut(QKeySequence::Quit);
     resize(500, 750);
     setWindowTitle(appName + " " + appVersion);
+}
+
+
+void Window::readSettings()
+{
+    QSettings settings("Mokachokokarbon", "Eddy");
+    restoreGeometry(settings.value("geometry").toByteArray());
+}
+
+
+void Window::saveSettings()
+{
+    QSettings settings("Mokachokokarbon", "Eddy");
+    settings.setValue("geometry", saveGeometry());
 }
 
 
@@ -160,8 +175,7 @@ void Window::on_eddyPlainTextEdit_textChanged()
 // events
 void Window::closeEvent(QCloseEvent *event)
 {
-    // [] TODO: call saveSettings()
-    qDebug() << "closed";
+    saveSettings();
 }
 
 
