@@ -144,7 +144,7 @@ void Window::saveAs()
 
 void Window::quit()
 {
-    QCoreApplication::quit();
+    close();
 }
 
 
