@@ -158,6 +158,13 @@ void Window::on_eddyPlainTextEdit_textChanged()
 }
 
 // events
+void Window::closeEvent(QCloseEvent *event)
+{
+    // [] TODO: call saveSettings()
+    qDebug() << "closed";
+}
+
+
 void Window::keyPressEvent(QKeyEvent *event)
 {
     if (event->key() == Qt::Key_F5)
