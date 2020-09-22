@@ -15,7 +15,6 @@
 #include <QByteArray>
 #include <QFileInfo>
 #include <QKeySequence>
-#include <QKeyEvent>
 #include <QDateTime>
 
 
