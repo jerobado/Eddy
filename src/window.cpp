@@ -59,7 +59,7 @@ void Window::setProperties()
 
 void Window::readSettings()
 {
-    QSettings settings("Mokachokokarbon", "Eddy");
+    QSettings settings("Mokachokokarbon", appName);
     lastKnownFilePath = settings.value("lastKnownFilePath").toString();
     restoreGeometry(settings.value("geometry").toByteArray());
 }
@@ -67,7 +67,7 @@ void Window::readSettings()
 
 void Window::saveSettings()
 {
-    QSettings settings("Mokachokokarbon", "Eddy");
+    QSettings settings("Mokachokokarbon", appName);
     settings.setValue("geometry", saveGeometry());
     settings.setValue("lastKnownFilePath", lastKnownFilePath);
 }
