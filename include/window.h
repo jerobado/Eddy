@@ -34,10 +34,10 @@ class Window : public QMainWindow
         QAction *quitAction;
         QMenu *fileMenu;
         QPlainTextEdit *eddyPlainTextEdit;
-        QString appName = "Eddy";
-        QString appVersion = "0.1.11";
+        QString appName;
+        QString appVersion;
         QString workingFilename;
-        QString lastKnownFilePath = ".";    
+        QString lastKnownFilePath;    
         void createWidgets();
         void createActions();
         void createMenus();

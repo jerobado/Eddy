@@ -44,6 +44,9 @@ void Window::createMenus()
 
 void Window::setProperties()
 {
+    appName = "Eddy";
+    appVersion = "0.1.12";
+    lastKnownFilePath = ".";
     newAction->setShortcut(QKeySequence::New);
     openAction->setShortcut(QKeySequence::Open);
     saveAction->setShortcut(QKeySequence::Save);
