@@ -25,8 +25,12 @@ class Window : public QMainWindow
         explicit Window(QMainWindow *parent=0);
     
     private:
-        bool isEddyPlainTextEditTextChanged = false;
-        bool isNewFile = false;
+        bool isEddyPlainTextEditTextChanged;
+        bool isNewFile;
+        QString appName;
+        QString appVersion;
+        QString workingFilename;
+        QString lastKnownFilePath;    
         QAction *newAction;
         QAction *openAction;
         QAction *saveAction;
@@ -34,10 +38,6 @@ class Window : public QMainWindow
         QAction *quitAction;
         QMenu *fileMenu;
         QPlainTextEdit *eddyPlainTextEdit;
-        QString appName;
-        QString appVersion;
-        QString workingFilename;
-        QString lastKnownFilePath;    
         void createWidgets();
         void createActions();
         void createMenus();

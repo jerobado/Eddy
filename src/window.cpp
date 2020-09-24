@@ -47,6 +47,8 @@ void Window::setProperties()
     appName = "Eddy";
     appVersion = "0.1.12";
     lastKnownFilePath = ".";
+    isEddyPlainTextEditTextChanged = false;
+    isNewFile = false;
     newAction->setShortcut(QKeySequence::New);
     openAction->setShortcut(QKeySequence::Open);
     saveAction->setShortcut(QKeySequence::Save);
