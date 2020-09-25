@@ -10,3 +10,7 @@ SOURCES = src/main.cpp  \
 INCLUDEPATH = include
 
 TARGET = eddy
+
+target.path = /opt/Eddy
+target.files = eddy
+INSTALLS += target
