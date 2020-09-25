@@ -14,3 +14,5 @@ TARGET = eddy
 target.path = /opt/Eddy
 target.files = eddy
 INSTALLS += target
+
+QMAKE_LFLAGS = -no-pie
