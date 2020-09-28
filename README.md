@@ -27,3 +27,10 @@ _Eddy_ is a simple text editor written in C++ and Qt.
 ```
     $ ./eddy
 ```
+
+### Installation
+After building the source, simply run this command:
+```
+    $ make install
+```
+This will install the application in `/opt/Eddy`. Use `sudo` if you encountered permission error.
