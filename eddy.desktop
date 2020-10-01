@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=Eddy
+Exec=/home/jerobado/Documents/GitHub/Eddy/eddy
+Type=Application
+Icon=/home/jerobado/Documents/GitHub/Eddy/images/file-kiranshastry-64.png
+Comment=Text editor for humans
+Categories=Qt;GNOME;Utility;
