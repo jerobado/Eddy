@@ -45,7 +45,7 @@ void Window::createMenus()
 void Window::setProperties()
 {
     appName = "Eddy";
-    appVersion = "0.1.12";
+    appVersion = "0.1.13";
     lastKnownFilePath = ".";
     isEddyPlainTextEditTextChanged = false;
     isNewFile = false;
