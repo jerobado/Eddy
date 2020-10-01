@@ -17,6 +17,8 @@
 #include <QKeySequence>
 #include <QDateTime>
 #include <QSettings>
+#include <QIcon>
+
 
 class Window : public QMainWindow
 {

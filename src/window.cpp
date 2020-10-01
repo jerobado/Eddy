@@ -56,6 +56,7 @@ void Window::setProperties()
     quitAction->setShortcut(QKeySequence::Quit);
     resize(500, 750);
     setWindowTitle(appName + " " + appVersion);
+    setWindowIcon(QIcon(":/images/file-kiranshastry-64.png"));
 }
 
 
