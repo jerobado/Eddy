@@ -1,4 +1,4 @@
-Eddy
+![Hey! Eddy](images/file-kiranshastry-64.png) Eddy
 ---
 
 _Eddy_ is a simple text editor written in C++ and Qt.
