@@ -32,7 +32,8 @@ class Window : public QMainWindow
         QString appName;
         QString appVersion;
         QString workingFilename;
-        QString lastKnownFilePath;    
+        QString lastKnownFilePath;
+        QString timestampFormat;
         QAction *newAction;
         QAction *openAction;
         QAction *saveAction;
