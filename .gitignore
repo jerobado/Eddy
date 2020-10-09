@@ -2,9 +2,15 @@
 _todo.txt
 
 # Generated files
+*.moc
 *.o
 *.qmake.stash
 moc_*
 
 # Executable files
 eddy
+tests/tests
+
+# VS Code stuff
+.vscode
+
