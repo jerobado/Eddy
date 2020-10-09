@@ -45,7 +45,7 @@ void Window::createMenus()
 void Window::setProperties()
 {
     appName = "Eddy";
-    appVersion = "0.1.13";
+    appVersion = "0.1.14";
     lastKnownFilePath = ".";
     timestampFormat = "h:mm:ss ap, ddd, d MMM yyyy";    // ie. 8:17:46 pm, Fri, 9 Oct 2020
     isEddyPlainTextEditTextChanged = false;
