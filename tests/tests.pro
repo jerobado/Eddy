@@ -1,0 +1,10 @@
+QT       += core testlib gui widgets
+QT       -= gui  
+TARGET   = tests
+CONFIG   += console  
+CONFIG   -= app_bundle  
+CONFIG   += testcase  
+TEMPLATE = app  
+SOURCES += sampletest.cpp ../src/window.cpp
+HEADERS += ../include/window.h
+INCLUDEPATH += ../include ../src
