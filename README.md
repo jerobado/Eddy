@@ -34,3 +34,12 @@ After building the source, simply run this command:
     $ make install
 ```
 This will install the application in `/opt/Eddy`. Use `sudo` if you encountered permission error.
+
+### Running tests
+You can run the tests with the following commands:
+```
+    $ cd tests
+    $ qmake -o Makefile tests.pro
+    $ make
+    $ ./tests
+```
