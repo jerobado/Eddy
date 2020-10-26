@@ -7,6 +7,7 @@ class TestEddy: public QObject
 
     private:
         Window test_eddyWindow;
+        QString windowTitle = "Eddy 0.1.14";
     
     private slots:
         void test_default_properties();
@@ -15,7 +16,7 @@ class TestEddy: public QObject
 
 void TestEddy::test_default_properties()
 {
-    QCOMPARE(test_eddyWindow.windowTitle(), QString("Eddy 0.1.14"));
+    QCOMPARE(test_eddyWindow.windowTitle(), QString(windowTitle));
 }
 
 
