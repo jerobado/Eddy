@@ -25,15 +25,15 @@ class Window : public QMainWindow
     Q_OBJECT
     public:
         explicit Window(QMainWindow *parent=0);
-    
-    private:
         bool isEddyPlainTextEditTextChanged;
         bool isNewFile;
         QString appName;
         QString appVersion;
         QString workingFilename;
         QString lastKnownFilePath;
-        QString timestampFormat;
+        QString timestampFormat;    
+
+    private:
         QAction *newAction;
         QAction *openAction;
         QAction *saveAction;
