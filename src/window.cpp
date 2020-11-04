@@ -56,7 +56,7 @@ void Window::setProperties()
     saveAsAction->setShortcut(QKeySequence::SaveAs);
     quitAction->setShortcut(QKeySequence::Quit);
     resize(500, 750);
-    setWindowTitle(appName + " " + appVersion);
+    setWindowTitle(appName % " " % appVersion);
     setWindowIcon(QIcon(":/images/file-kiranshastry-64.png"));
 }
 
@@ -106,7 +106,7 @@ void Window::newFile()
     workingFilename = "";
     isNewFile = true;
     eddyPlainTextEdit->clear();
-    setWindowTitle(appName + " " + appVersion);
+    setWindowTitle(appName % " " % appVersion);
 }
 
 
@@ -127,7 +127,7 @@ void Window::open()
         eddyPlainTextEdit->setPlainText(plaintext);
         isNewFile = false;
         lastKnownFilePath = fileinfo.absolutePath();
-        setWindowTitle(fileinfo.fileName() + " - " + appName + " " + appVersion);
+        setWindowTitle(fileinfo.fileName() % " - " % appName % " " % appVersion);
     }
 }
 
@@ -151,7 +151,7 @@ void Window::saveAs()
 {  
     workingFilename = QFileDialog::getSaveFileName(this, 
                                                    tr("Save As"),
-                                                   lastKnownFilePath + "/untitled.txt",
+                                                   lastKnownFilePath % "/untitled.txt",
                                                    tr("Text files (*.txt)"));
     QFile file(workingFilename);
     QFileInfo fileinfo(workingFilename);
@@ -161,7 +161,7 @@ void Window::saveAs()
         writer << eddyPlainTextEdit->toPlainText();
         isNewFile = false;
         lastKnownFilePath = fileinfo.absolutePath();
-        setWindowTitle(fileinfo.fileName() + " - " + appName + " " + appVersion);
+        setWindowTitle(fileinfo.fileName() % " - " % appName % " " % appVersion);
     }
 }
 

@@ -18,6 +18,7 @@
 #include <QDateTime>
 #include <QSettings>
 #include <QIcon>
+#include <QStringBuilder>
 
 
 class Window : public QMainWindow
