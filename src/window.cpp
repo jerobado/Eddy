@@ -35,7 +35,7 @@ void Window::createMenus()
     fileMenu->addAction(newAction);
     fileMenu->addAction(openAction);
     fileMenu->addSeparator();
-    fileMenu->addAction(saveAction);
+    // fileMenu->addAction(saveAction);     // temporarily removed, just testing if we truly needed this one
     fileMenu->addAction(saveAsAction);
     fileMenu->addSeparator();
     fileMenu->addAction(quitAction);
